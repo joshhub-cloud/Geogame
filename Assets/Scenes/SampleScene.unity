@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 799662788}
   - component: {fileID: 799662789}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -892,7 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 799662786}
-  speed: 10
+  speed: 50
   axis: {x: 0, y: 1, z: 0}
   InactiveObject: {fileID: 1427192009}
 --- !u!1 &846400629
