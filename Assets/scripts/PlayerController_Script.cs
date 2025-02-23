@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController_Script : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class PlayerController_Script : MonoBehaviour
     public Text textPosition;
     public Text textRotation;
     public Text textScale;
+
+    public AudioSource InactiveSource;
+    public GameObject InactiveObject;
+    public GameObject Coin;
+    public GameObject Door;
 
     // Start is called before the first frame update
     void Start()
@@ -59,9 +65,24 @@ public class PlayerController_Script : MonoBehaviour
             textRotation.text = $"Rotacion \nX:{transform.rotation.x:F2} \nY:{transform.rotation.y:F2} \nZ:{transform.rotation.z:F2}";
             textScale.text = $"Escala \nX:{transform.localScale.x:F2} \nY:{transform.localScale.y:F2} \nZ:{transform.localScale.z:F2}";
         }
-    }  
+    }
 
     // ----- COMPLETE ------
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Door"))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
 
+        if (other.CompareTag("Coin"))
+        {
+            Coin.SetActive(false);
+            InactiveObject.SetActive(true);
+            InactiveSource.Play();
+        }
+        
+    }
    
+
 }

@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Raycast Victim
+  - Victim
+  - Door
+  - Coin
   layers:
   - Default
   - TransparentFX
